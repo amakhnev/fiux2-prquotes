@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog id="AddCommentDialog"
+		title="Add comment"
+		class="sapUiContentPadding">
+		<content>
+			<l:VerticalLayout id="verticalLayout" width="100%">
+				<Text id="approvalText" text="Send your comment to:" />
+				<Select
+					id="messageHeaderSelect"
+                    forceSelection="true"
+                    selectedKey="From Roy (Procurement) To Procurement"
+                    width="100%" 
+					>
+					<items>
+						<core:Item key="From Roy (Procurement) To Procurement" text="Procurement" />
+						<core:Item key="From Roy (Procurement) To Finance" text="Finance" />
+						<core:Item key="From Roy (Procurement) To Vendor" text="Vendor" />
+					</items>	
+				</Select>	
+				<TextArea id="comment" value ="" rows="5" width="100%" placeholder="Add your comment here" />
+			</l:VerticalLayout>
+		</content>	
+		<beginButton>
+			<Button id="okButton" text="Send" press="onConfirmAction" />
+		</beginButton>
+		<endButton>
+			<Button id="cancelButton" text="Cancel" press="onCancelAction" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

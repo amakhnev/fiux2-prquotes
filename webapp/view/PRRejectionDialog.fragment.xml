@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core">
+	<Dialog id="PRRejectionDialog"
+		title="Reject Purchase requisition"
+		class="sapUiContentPadding">
+		<content>
+			<l:VerticalLayout id="verticalLayout" width="100%">
+				<Text id="approvalText" text="Would you like to reject this Purchase Requisition?" />
+				<TextArea id="approvalNote" value ="" rows="5" width="100%" placeholder="Note (optional)" />
+			</l:VerticalLayout>
+		</content>	
+		<beginButton>
+			<Button id="okButton" text="Reject" press="onConfirmAction" />
+		</beginButton>
+		<endButton>
+			<Button id="cancelButton" text="Cancel" press="onCancelAction" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

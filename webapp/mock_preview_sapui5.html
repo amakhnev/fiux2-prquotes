@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>PRQuotes</title>
+
+	<!-- Bootstrapping UI5 -->
+	<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"edu.opensap.fiux2.am": "."}'
+			data-sap-ui-frameOptions="trusted">
+	</script>
+<script src="localService/mockRequests.js"> </script>
+<script>
+var bRunWithMock = true;
+var sRunWithMock = jQuery.sap.getUriParameters().get('run-with-mock');
+if (sRunWithMock === 'false') {
+bRunWithMock = false;
+}
+if (bRunWithMock) {
+jQuery.sap.require('sap.ui.core.util.MockServer');
+var uri = '/edu/opensap/fiux2/am/data/';
+var oMock = new sap.ui.core.util.MockServer({rootUri : uri});
+var _sAppModulePath = "edu.opensap.fiux2.am/";
+var sMetadataPath = "localService/metadata.xml";
+var sMetadataUrl = jQuery.sap.getModulePath(_sAppModulePath + sMetadataPath.replace(".xml", ""), ".xml");
+oMock.simulate(sMetadataUrl, { sMockdataBaseUrl : 'localService/mockdata', bGenerateMissingMockData : true });
+try {
+ var aMockRequest = webide.mock.ext.mockRequests.getRequests();
+if (aMockRequest && aMockRequest.length > 0) {
+  oMock.setRequests(oMock.getRequests().concat(aMockRequest));
+}
+} catch(oErr) {
+jQuery.sap.log.debug(oErr.message);
+}finally {
+ oMock.start();
+	jQuery(document).ready(function($) {  sap.m.MessageToast.show('Running in demo mode with mock data.', {  duration : 4000 }); });
+ }}
+</script>
+
+	<script>
+		sap.ui.getCore().attachInit(function () {
+			sap.ui.require([
+				"sap/m/Shell",
+				"sap/ui/core/ComponentContainer"
+			], function (Shell, ComponentContainer) {
+				// initialize the UI component
+				new Shell({
+					app: new ComponentContainer({
+						height : "100%",
+						name : "edu.opensap.fiux2.am"
+					})
+				}).placeAt("content");
+			});
+		});
+	</script>
+
+</head>
+
+<!-- UI Content -->
+<body class="sapUiBody" id="content">
+</body>
+</html>

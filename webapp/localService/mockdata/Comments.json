@@ -1,0 +1,131 @@
+[{
+	"CommentExtKey": "1",
+	"CreationDate": "/Date(1460369701000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "RFQ sent",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 1')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "2",
+	"CreationDate": "/Date(1460734333000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "Quotation received",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 2')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "3",
+	"CreationDate": "/Date(1460369701000)/",
+	"ReferenceKey": "2",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "RFQ sent",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 3')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "4",
+	"CreationDate": "/Date(1460737805000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From Roy (Procurement) To Finance",
+	"Comment": "Can we do payment on 14 days?",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 4')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "5",
+	"CreationDate": "/Date(1460965213000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From Jerry (Finance) To Procurement",
+	"Comment": "Sure, why not, just let me know so I can keep an eye on this.",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 5')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "6",
+	"CreationDate": "/Date(1460369701000)/",
+	"ReferenceKey": "3",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "RFQ sent",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 6')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "7",
+	"CreationDate": "/Date(1460479742000)/",
+	"ReferenceKey": "3",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "Quotation received",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 7')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "8",
+	"CreationDate": "/Date(1460535047000)/",
+	"ReferenceKey": "2",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "Quotation received",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 8')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "9",
+	"CreationDate": "/Date(1460479842000)/",
+	"ReferenceKey": "3",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "Auto Rejection. Reason: \"Maximum value exceeded\"",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 9')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "10",
+	"CreationDate": "/Date(1460996353000)/",
+	"ReferenceKey": "2",
+	"MessageHeader": "From Roy (Procurement) To Procurement",
+	"Comment": "had a call - they don't have it in stock in fact but expecting to get on time",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 10')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "11",
+	"CreationDate": "/Date(1460974153000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From Roy (Procurement) To Vendor",
+	"Comment": "Hi Tom, I know the price is right and we have our agreed discount here, but can you offer us payment term better than 30 net? We did 14 3% few times before, it would be great if we can have it this time as well..",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 11')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "12",
+	"CreationDate": "/Date(1461081314000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From System To Procurement",
+	"Comment": "Quotation updated",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 12')",
+		"type": "MyModel.CommentExt"
+	}
+}, {
+	"CommentExtKey": "13",
+	"CreationDate": "/Date(1461078973000)/",
+	"ReferenceKey": "1",
+	"MessageHeader": "From Tom (Vendor) To Roy (Procurement)",
+	"Comment": "Good news - we can offer better than 30 Net. Bad news - it will be just 1.5% - but hey, it's better than nothing, isn't it? Let me know once you done with biddings and I will send you final invoice",
+	"__metadata": {
+		"uri": "Comments('CommentExtKey 13')",
+		"type": "MyModel.CommentExt"
+	}
+}]

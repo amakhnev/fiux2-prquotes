@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+	<edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+
+		<Schema Namespace="MyModel" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"  xmlns:sap="http://www.sap.com/Protocols/SAPData">
+
+			<EntityType Name="PurchaseRequisition">
+				<Key>
+					<PropertyRef Name="PurchaseRequisitionKey"/>
+				</Key>
+				<Property Name="PurchaseRequisitionKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+				<Property Name="PurchaseRequisitionID" Type="Edm.String" MaxLength="10" />
+				<Property Name="CreatedByID" Type="Edm.String" MaxLength="40" />
+				<Property Name="CreatedByName" Type="Edm.String" MaxLength="40" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Precision="7" />
+				<Property Name="QuotationDeadline" Type="Edm.DateTime" Precision="7" />
+				<Property Name="SelectionDeadline" Type="Edm.DateTime" Precision="7" />
+				<Property Name="ProductID" Type="Edm.String"  MaxLength="10" />
+				<Property Name="ProductDescription" Type="Edm.String" MaxLength="255" />
+				<Property Name="Quantity" Type="Edm.Decimal" Precision="15" Scale="2" />
+				<Property Name="UOM" Type="Edm.String"  MaxLength="2" />
+				<Property Name="UOMDescription" Type="Edm.String" MaxLength="255" />
+				<Property Name="Currency" Type="Edm.String"  MaxLength="3" />
+				<Property Name="MaxPriceTotal" Type="Edm.Decimal" Precision="15" Scale="2" />
+				<Property Name="DeliveryDate" Type="Edm.DateTime" Precision="7" />
+				<Property Name="DeliveryDateString" Type="Edm.String" MaxLength="8" />
+				<Property Name="Plant" Type="Edm.String" MaxLength="255" />
+				<Property Name="DeliveryAddress" Type="Edm.String" MaxLength="255" />
+				<Property Name="Status" Type="Edm.String" MaxLength="40" />
+				<Property Name="CompanyCode" Type="Edm.String" MaxLength="40" />
+				<Property Name="QuotesNum" Type="Edm.Decimal" Precision="3" Scale="0"/>
+				<NavigationProperty FromRole="PurchaseRequisitionRole" Name="Quotes" Relationship="MyModel.FK_PurchaseRequisition_Quotes" ToRole="QuoteRole"/>
+
+			</EntityType>
+
+			<EntityType Name="Quote">
+				<Key>
+					<PropertyRef Name="QuoteKey"/>
+				</Key>
+				<Property Name="QuoteKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+				<Property Name="PurchaseRequisitionKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+				<Property Name="QuoteID" Type="Edm.String" MaxLength="10" />
+				<Property Name="ProductID" Type="Edm.String"  MaxLength="10" />
+				<Property Name="ProductDescription" Type="Edm.String" MaxLength="255" />
+				<Property Name="PricePerUnit" Type="Edm.Decimal" Precision="15" Scale="2" />
+				<Property Name="Quantity" Type="Edm.Decimal" Precision="15" Scale="2" />
+				<Property Name="UOM" Type="Edm.String"  MaxLength="2" />
+				<Property Name="UOMDescription" Type="Edm.String" MaxLength="255" />
+				<Property Name="Currency" Type="Edm.String"  MaxLength="3" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Precision="7" />
+				<Property Name="Plant" Type="Edm.String" MaxLength="255" />
+				<Property Name="DeliveryAddress" Type="Edm.String" MaxLength="255" />
+				<Property Name="DeliveryDate" Type="Edm.DateTime" Precision="7" />
+				<Property Name="Status" Type="Edm.String" MaxLength="40" />
+				<Property Name="ExpirationDate" Type="Edm.DateTime" Precision="7" />
+				<Property Name="PaymentTerms" Type="Edm.String" MaxLength="40" />
+				<Property Name="CommentsCount" Type="Edm.Decimal" Precision="3" Scale="0"/>
+				<Property Name="AttachmentsCount" Type="Edm.Decimal" Precision="3" Scale="0"/>
+				<Property Name="VendorCompanyName" Type="Edm.String" MaxLength="255" />
+				<Property Name="VendorOrders12M" Type="Edm.Decimal" Precision="15" Scale="2" />
+				<Property Name="VendorContractComplianceKPI12M" Type="Edm.Decimal" Precision="15" Scale="2" />
+				<Property Name="VendorAddress" Type="Edm.String" MaxLength="255" />
+				
+				<NavigationProperty FromRole="QuoteRole" Name="Comments" Relationship="MyModel.FK_Quote_Comments" ToRole="CommentRole"/>
+				<NavigationProperty FromRole="QuoteRole" Name="Attachments" Relationship="MyModel.FK_Quote_Attachments" ToRole="AttachmentRole"/>
+			</EntityType>
+
+	
+
+			<EntityType Name="CommentExt">
+				<Key>
+					<PropertyRef Name="CommentExtKey"/>
+				</Key>
+				<Property Name="CommentExtKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+				<Property Name="CreationDate" Type="Edm.DateTime" Precision="7" />
+				<Property Name="ReferenceKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+				<Property Name="MessageHeader" Type="Edm.String" MaxLength="255" />
+				<Property Name="Comment" Type="Edm.String" MaxLength="1024" />
+			</EntityType>
+
+			<EntityType Name="Attachment">
+				<Key>
+					<PropertyRef Name="AttachmentKey"/>
+				</Key>
+				<Property Name="AttachmentKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+				<Property Name="UploadDate" Type="Edm.DateTime" Precision="7" />
+				<Property Name="FileName" Type="Edm.String" MaxLength="255" />
+				<Property Name="MimeType" Type="Edm.String" MaxLength="64" />
+				<Property Name="FileSize" Type="Edm.String" MaxLength="40" />
+				<Property Name="Description" Type="Edm.String" MaxLength="255" />
+				<Property Name="URL" Type="Edm.String" MaxLength="40" />
+				<Property Name="ReferenceKey" Type="Edm.String" Nullable="false" MaxLength="32" />
+			</EntityType>
+			<ComplexType Name="FunctionImportResult">
+				<Property Name="Success" Type="Edm.Boolean" Nullable="false"/>
+			</ComplexType>
+			<Association Name="FK_PurchaseRequisition_Quotes">
+				<End Multiplicity="1" Role="PurchaseRequisitionRole" Type="MyModel.PurchaseRequisition"/>
+				<End Multiplicity="*" Role="QuoteRole" Type="MyModel.Quote"/>
+				<ReferentialConstraint>
+					<Principal Role="PurchaseRequisitionRole">
+						<PropertyRef Name="PurchaseRequisitionKey"/>
+					</Principal>
+					<Dependent Role="QuoteRole">
+						<PropertyRef Name="PurchaseRequisitionKey"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+
+
+			<Association Name="FK_Quote_Comments">
+				<End Multiplicity="0..1" Role="QuoteRole" Type="MyModel.Quote"/>
+				<End Multiplicity="*" Role="CommentRole" Type="MyModel.CommentExt"/>
+				<ReferentialConstraint>
+					<Principal Role="QuoteRole">
+						<PropertyRef Name="QuoteKey"/>
+					</Principal>
+					<Dependent Role="CommentRole">
+						<PropertyRef Name="ReferenceKey"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+
+						<Association Name="FK_Quote_Attachments">
+				<End Multiplicity="0..1" Role="QuoteRole" Type="MyModel.Quote"/>
+				<End Multiplicity="*" Role="AttachmentRole" Type="MyModel.Attachment"/>
+				<ReferentialConstraint>
+					<Principal Role="QuoteRole">
+						<PropertyRef Name="QuoteKey"/>
+					</Principal>
+					<Dependent Role="AttachmentRole">
+						<PropertyRef Name="ReferenceKey"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+
+			<EntityContainer Name="PREntities" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+				<EntitySet EntityType="MyModel.PurchaseRequisition" Name="PurchaseRequisitions"/>
+				<EntitySet EntityType="MyModel.Quote" Name="Quotes"/>
+
+				<EntitySet EntityType="MyModel.CommentExt" Name="Comments"/>
+				<EntitySet EntityType="MyModel.Attachment" Name="Attachments"/>
+
+				<AssociationSet Association="MyModel.FK_PurchaseRequisition_Quotes" Name="PR_TO_Q_AssocSet">
+					<End EntitySet="PurchaseRequisitions" Role="PurchaseRequisitionRole"/>
+					<End EntitySet="Quotes" Role="QuoteRole"/>
+				</AssociationSet>
+					<AssociationSet Association="MyModel.FK_Quote_Comments" Name="Q_TO_C_AssocSet">
+					<End EntitySet="Quotes" Role="QuoteRole"/>
+					<End EntitySet="Comments" Role="CommentRole"/>
+				</AssociationSet>
+									<AssociationSet Association="MyModel.FK_Quote_Attachments" Name="Q_TO_A_AssocSet">
+					<End EntitySet="Quotes" Role="QuoteRole"/>
+					<End EntitySet="Attachments" Role="AttachmentRole"/>
+				</AssociationSet>
+				<FunctionImport Name="RejectPurchaseRequisition" ReturnType="MyModel.FunctionImportResult" m:HttpMethod="POST" sap:label="Reject Purchase Requisition with optional note" sap:action-for="MyModel.PurchaseRequisition">
+					<Parameter Name="PRKey" Type="Edm.String" Mode="In" MaxLength="32"/>
+					<Parameter Name="Note" Type="Edm.String" Mode="In" MaxLength="255"/>
+				</FunctionImport>
+				<FunctionImport Name="RejectQuote" ReturnType="MyModel.FunctionImportResult" m:HttpMethod="POST" sap:label="Reject Quote with optional note" sap:action-for="MyModel.Quote">
+					<Parameter Name="QuoteKey" Type="Edm.String" Mode="In" MaxLength="32"/>
+					<Parameter Name="Note" Type="Edm.String" Mode="In" MaxLength="255"/>
+				</FunctionImport>
+				<FunctionImport Name="ApproveQuote" ReturnType="MyModel.FunctionImportResult" m:HttpMethod="POST" sap:label="Approve Quote with optional note" sap:action-for="MyModel.Quote">
+					<Parameter Name="PRKey" Type="Edm.String" Mode="In" MaxLength="32"/>
+					<Parameter Name="Note" Type="Edm.String" Mode="In" MaxLength="255"/>
+					<Parameter Name="QuoteKey" Type="Edm.String" Mode="In" MaxLength="32"/>
+				</FunctionImport>
+				<FunctionImport Name="AddComment" ReturnType="MyModel.FunctionImportResult" m:HttpMethod="POST" sap:label="Add comment" sap:action-for="MyModel.CommentExt">
+					<Parameter Name="Comment" Type="Edm.String" Mode="In" MaxLength="255"/>
+					<Parameter Name="MessageHeader" Type="Edm.String" Mode="In" MaxLength="255"/>
+					<Parameter Name="ReferenceKey" Type="Edm.String" Mode="In" MaxLength="32"/>
+				</FunctionImport>
+			</EntityContainer>
+		</Schema>
+
+	</edmx:DataServices>
+</edmx:Edmx>

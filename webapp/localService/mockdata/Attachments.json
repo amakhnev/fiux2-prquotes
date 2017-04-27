@@ -1,0 +1,19 @@
+[{
+	"AttachmentKey": "1",
+	"UploadDate": "/Date(1461081314000)/",
+	"FileName": "PriceList.xlsx",
+	"MimeType": "application/vnd.ms-excel",
+	"FileSize": "23.5Mb",
+	"Description": "Extracted from quotation email",
+	"URL": "http://send.file.to.me/att11",
+	"ReferenceKey": "1"
+}, {
+	"ReferenceKey": "1",
+	"URL": "http://send.file.to.me/att21",
+	"Description": "Extracted from quotation email",
+	"FileSize": "165Kb",
+	"MimeType": "application/pdf",
+	"FileName": "Invoice.pdf",
+	"UploadDate": "/Date(1461081314000)/",
+	"AttachmentKey": "2"
+}]

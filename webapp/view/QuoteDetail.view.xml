@@ -1,0 +1,102 @@
+<mvc:View controllerName="edu.opensap.fiux2.am.controller.QuoteDetail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic">
+	<semantic:DetailPage id="page_QuoteDetail" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>quoteDetailTitle}"
+		busy="{quoteDetailView>/busy}" busyIndicatorDelay="{quoteDetailView>/delay}">
+		<semantic:content>
+			<Panel expandable="true" expanded="true" headerText="Quote ID: {QuoteID}" width="auto" class="sapUiResponsiveMargin">
+				<content>
+					<ObjectHeader id="objectHeaderQuote" title="{VendorCompanyName}">
+						<attributes>
+							<ObjectAttribute title="Product" text="{ProductDescription}"/>
+							<ObjectAttribute title="Quantity" text="{Quantity} {UOMDescription}"/>
+							<ObjectAttribute title="Price Per Unit" text="{PricePerUnit} {Currency}"/>
+							<ObjectAttribute title="TotalPrice" text="{parts:[{path: 'PricePerUnit'}, {path: 'Quantity'}], formatter: '.formatter.multiply'} {Currency}"/>
+							<ObjectAttribute title="Payment terms" text="{PaymentTerms}"/>
+							<ObjectAttribute title="Delivery date" text="{path: 'DeliveryDate', formatter: '.formatter.dateValue'}"/>
+							<ObjectAttribute title="Delivery address" text="{DeliveryAddress} "/>
+							<ObjectAttribute title="Quote status" text="{Status}"/>
+							<ObjectAttribute title="Quote received" text="{path: 'CreatedAt', formatter: '.formatter.dateTimeValue'}"/>
+							<ObjectAttribute title="Quote expiring" text="{path: 'ExpirationDate', formatter: '.formatter.dateTimeValue'}"/>
+						</attributes>
+					</ObjectHeader>
+				</content>
+			</Panel>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}" text="Company info">
+					<ObjectAttribute title="Vendor Name" text="{VendorCompanyName}" />
+					<ObjectAttribute title="Vendor Address" text="{VendorAddress}" />
+					<ObjectAttribute title="Contract Compliance" text="{VendorContractComplianceKPI12M}%" />
+					<ObjectAttribute title="Last 12months orders" text="{VendorOrders12M}" />
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter2" icon="sap-icon://attachment" tooltip="{i18n>detailIconTabBarAttachments}"
+						text="{i18n>detailIconTabBarAttachments}" count="{AttachmentsCount}">
+	
+	
+	<UploadCollection
+        id="quoteAttachmentsList"
+		showSeparators="All"
+		instantUpload="false"
+		uploadEnabled="false"
+		mode="None"
+		items="{path : 'Attachments',
+			sorter : {
+				path : 'UploadDate',
+				descending : true
+			}}" >
+		<UploadCollectionItem
+			fileName="{FileName}"
+			mimeType="{MimeType}"
+			url = "{URL}"
+			icon="{path: 'MimeType', formatter: '.formatter.getAttachmentIcon'}"
+			sender="{FileName} {FileSize}"
+			enableEdit="false"
+			enableDelete="false"
+			visibleDelete="false"
+			visibleEdit="false"
+			iconDensityAware="false"
+			timestamp="{path: 'UploadDate', formatter: '.formatter.dateTimeValue'}"
+			text="{Description}">
+			<attributes>
+				<ObjectAttribute title="Uploaded on"
+								text="{path: 'UploadDate', formatter: '.formatter.dateTimeValue'}"/>
+				<ObjectAttribute title="Description"
+								text="{Description}"/>
+			</attributes>	
+		</UploadCollectionItem>		
+		</UploadCollection>
+
+					</IconTabFilter>
+					<IconTabFilter id="iconTabBarFilter3" icon="sap-icon://customer-history" tooltip="Comments" text="Comments" count="{CommentsCount}">
+			<Toolbar>
+				<Button icon="sap-icon://add" press="onAddCommentButtonPress" text="Add comment" type="Emphasized"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+						
+		<List
+              id="quoteCommentsList"
+		showSeparators="Inner"
+		items="{path : 'Comments',
+			sorter : {
+				path : 'CreationDate',
+				descending : true
+			}}" >
+		<FeedListItem
+			icon="sap-icon://person-placeholder"
+			sender="{MessageHeader}"
+			iconDensityAware="false"
+			timestamp="{path: 'CreationDate', formatter: '.formatter.dateTimeValue'}"
+			text="{Comment}" />
+	</List>					
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Accept Quote" press="onApprovalButtonPressed"/>
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Reject Quote" press="onRejectionButtonPressed"/>
+		</semantic:negativeAction>
+	</semantic:DetailPage>
+</mvc:View>

@@ -1,0 +1,125 @@
+[{
+	"PurchaseRequisitionKey": "2",
+	"PurchaseRequisitionID": "4500010002",
+	"CreatedByID": "PROCMANAGER",
+	"CreatedByName": "Roy (Procurement)",
+	"CreatedAt": "/Date(1460369701000)/",
+	"QuotationDeadline": "/Date(1461106800000)/",
+	"SelectionDeadline": "/Date(1461366000000)/",
+	"ProductID": "87234",
+	"ProductDescription": "Intel Core i7-6700K 4.0GHz Quad-Core Processor",
+	"Quantity": 400,
+	"UOM": "PC",
+	"UOMDescription": "piece(s)",
+	"Currency": "USD",
+	"MaxPriceTotal": 120000,
+	"DeliveryDate": "/Date(1462143600000)/",
+	"Plant": "New York",
+	"DeliveryAddress": "51 Astor Pl, New York, NY 10003, United States",
+	"Status": "Vendor Selection",
+	"CompanyCode": "BestPC USA (3000)",
+	"__metadata": {
+		"uri": "PurchaseRequisitions('PurchaseRequisitionKey 1')",
+		"type": "MyModel.PurchaseRequisition"
+	},
+	"Quotes": {
+		"__deferred": {
+			"uri": "PurchaseRequisitions('PurchaseRequisitionKey 1')/Quotes"
+		}
+	},
+	"QuotesNum": 3,
+	"DeliveryDateString": "20160502"
+}, {
+	"PurchaseRequisitionKey": "4",
+	"PurchaseRequisitionID": "4500010004",
+	"CreatedByID": "PROCMANAGER",
+	"CreatedByName": "Roy (Procurement)",
+	"CreatedAt": "/Date(1459529290000)/",
+	"QuotationDeadline": "/Date(1460242800000)/",
+	"SelectionDeadline": "/Date(1460502000000)/",
+	"ProductID": "65334",
+	"ProductDescription": "Samsung 950 PRO 256GB M.2-2280 Solid State Drive",
+	"Quantity": 500,
+	"UOM": "PC",
+	"UOMDescription": "piece(s)",
+	"Currency": "USD",
+	"MaxPriceTotal": 60000,
+	"DeliveryDate": "/Date(1462251600000)/",
+	"Plant": "New York",
+	"DeliveryAddress": "51 Astor Pl, New York, NY 10003, United States",
+	"Status": "Vendor Selection",
+	"CompanyCode": "BestPC USA (3000)",
+	"__metadata": {
+		"uri": "PurchaseRequisitions('PurchaseRequisitionKey 2')",
+		"type": "MyModel.PurchaseRequisition"
+	},
+	"Quotes": {
+		"__deferred": {
+			"uri": "PurchaseRequisitions('PurchaseRequisitionKey 2')/Quotes"
+		}
+	},
+	"QuotesNum": 0,
+	"DeliveryDateString": "20160427"
+}, {
+	"PurchaseRequisitionKey": "1",
+	"PurchaseRequisitionID": "4500010001",
+	"CreatedByID": "INVENTAGENT",
+	"CreatedByName": "Kate Roberts (Inventory)",
+	"CreatedAt": "/Date(1460731324000)/",
+	"QuotationDeadline": "/Date(1462748400000)/",
+	"SelectionDeadline": "/Date(1463353200000)/",
+	"ProductID": "76533",
+	"ProductDescription": "Kingston 4GB 1600MHZ DDR3L NON-ECC CL11 Memory Module",
+	"Quantity": 1200,
+	"UOM": "EA",
+	"UOMDescription": "each",
+	"Currency": "USD",
+	"MaxPriceTotal": 18000,
+	"DeliveryDate": "/Date(1464562800000)/",
+	"Plant": "Seattle",
+	"DeliveryAddress": "817 1st S, Kirkland, WA 98033, United States",
+	"Status": "Vendor Selection",
+	"CompanyCode": "BestPC USA (3000)",
+	"__metadata": {
+		"uri": "PurchaseRequisitions('PurchaseRequisitionKey 3')",
+		"type": "MyModel.PurchaseRequisition"
+	},
+	"Quotes": {
+		"__deferred": {
+			"uri": "PurchaseRequisitions('PurchaseRequisitionKey 3')/Quotes"
+		}
+	},
+	"QuotesNum": 0,
+	"DeliveryDateString": "20160530"
+}, {
+	"PurchaseRequisitionKey": "3",
+	"PurchaseRequisitionID": "4500010003",
+	"CreatedByID": "WHMANAGER",
+	"CreatedByName": "Thomas Clark (Warehouse)",
+	"CreatedAt": "/Date(1461047808000)/",
+	"QuotationDeadline": "/Date(1464735600000)/",
+	"SelectionDeadline": "/Date(1464735600000)/",
+	"ProductID": "100234",
+	"ProductDescription": "Right Angle SATA Cable 45cm",
+	"Quantity": 50000,
+	"UOM": "PC",
+	"UOMDescription": "piece(s)",
+	"Currency": "EUR",
+	"MaxPriceTotal": 12500,
+	"DeliveryDate": "/Date(1467327600000)/",
+	"Plant": "Werk Hamburg",
+	"DeliveryAddress": "Beim Strohhause 17, 20097 Hamburg, Germany",
+	"Status": "Quotes Collected",
+	"CompanyCode": "BestePC Germany (1000)",
+	"__metadata": {
+		"uri": "PurchaseRequisitions('PurchaseRequisitionKey 4')",
+		"type": "MyModel.PurchaseRequisition"
+	},
+	"Quotes": {
+		"__deferred": {
+			"uri": "PurchaseRequisitions('PurchaseRequisitionKey 4')/Quotes"
+		}
+	},
+	"QuotesNum": 0,
+	"DeliveryDateString": "20160701"
+}]

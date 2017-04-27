@@ -1,0 +1,118 @@
+<mvc:View
+		controllerName="edu.opensap.fiux2.am.controller.PRDetail"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:semantic="sap.m.semantic">
+
+	<semantic:DetailPage
+			id="page"
+			navButtonPress="onNavBack"
+			showNavButton="{device>/system/phone}"
+			title="{i18n>detailTitle}"
+			busy="{detailView>/busy}"
+			busyIndicatorDelay="{detailView>/delay}">
+
+		<semantic:content>
+		<Panel expandable="true" expanded="true" headerText="Purchase Requisition ID: {PurchaseRequisitionID}" width="auto" class="sapUiResponsiveMargin">
+		<content>
+			<ObjectHeader
+					id="objectHeader"
+					title="{ProductDescription}"
+					number="{
+								path: 'Quantity',
+								formatter: '.formatter.currencyValue'
+					}"
+					numberUnit="{UOMDescription}">
+			<attributes>
+				<ObjectAttribute title="Delivery plant" text="{Plant} " />
+				<ObjectAttribute title="Delivery date" text="{path: 'DeliveryDate',
+							formatter: '.formatter.dateValue'}" />
+				<ObjectAttribute title="Delivery address" text="{DeliveryAddress} " />
+				<ObjectAttribute title="Maximum price" text="{MaxPriceTotal} {Currency}" />
+				<ObjectAttribute title="Maximum price per unit" text="{parts:[{path: 'MaxPriceTotal'}, {path: 'Quantity'}], formatter: '.formatter.divide' }  {Currency}" />
+				<ObjectAttribute title="Quote submission deadline" text="{path: 'QuotationDeadline',
+							formatter: '.formatter.dateValue'}" />
+				<ObjectAttribute title="Quote selection deadline" text="{path: 'SelectionDeadline',
+							formatter: '.formatter.dateValue'}" />
+		</attributes>
+			</ObjectHeader>
+		</content>
+	</Panel>
+			<Table
+					id="lineItemsList"
+					width="auto"
+					items="{Quotes}"
+					updateFinished="onListUpdateFinished"
+					noDataText="{i18n>detailLineItemTableNoDataText}"
+					busyIndicatorDelay="{detailView>/lineItemTableDelay}"
+					class="sapUiResponsiveMargin"
+					itemPress = "onQuoteSelect"
+					>
+				<headerToolbar>
+					<Toolbar id="lineItemsToolbar">
+						<Title	id="lineItemsHeader" text="Quotes" level="H2"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="13em">
+						<Text text="{i18n>detailLineItemTableIDColumn}"/>
+					</Column>
+					<Column
+							demandPopin="true"
+							width="6em">
+						<Text text="{i18n>detailLineItemTableUnitNumberColumn}"/>
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						width="4em">
+						<Text text="Quantity" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet"
+						width="7em">
+						<Text text="Total" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet">
+						<Text text="Payment terms" />
+					</Column>
+					<Column
+						minScreenWidth="Tablet">
+						<Text text="Status" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Active">
+						<cells>
+							<ObjectIdentifier
+									title="{VendorCompanyName}"
+									text="{VendorContractComplianceKPI12M}% from last {VendorOrders12M} orders"/>
+							<ObjectNumber
+								number="{
+									path: 'PricePerUnit',
+									formatter: '.formatter.currencyValue'
+								}"
+								unit="{Currency}"/>
+							<Text text="{Quantity}" />
+							<ObjectNumber
+								number="{parts:[{path: 'PricePerUnit'}, {path: 'Quantity'}], formatter: '.formatter.multiply'}"
+								unit="{Currency}"/>
+							<Text text="{PaymentTerms}" />
+							<ObjectStatus
+								text="{Status}"
+								state="{path: 'Status',
+										formatter: '.formatter.quotestatus'}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Reject PR" press="onRejectionButtonPressed"/>
+		</semantic:negativeAction>		
+
+
+	</semantic:DetailPage>
+
+</mvc:View>

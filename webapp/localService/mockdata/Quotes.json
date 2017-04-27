@@ -1,0 +1,103 @@
+[{
+	"QuoteKey": "1",
+	"PurchaseRequisitionKey": "2",
+	"VendorKey": "1",
+	"QuoteID": "3700020001",
+	"ProductID": "87234",
+	"ProductDescription": "Intel Core i7-6700K 4.0GHz Quad-Core Processor",
+	"PricePerUnit": 275,
+	"Quantity": 400,
+	"UOM": "PC",
+	"UOMDescription": "piece(s)",
+	"Currency": "USD",
+	"CreatedAt": "/Date(1461081314000)/",
+	"Plant": "New York",
+	"DeliveryAddress": "51 Astor Pl, New York, NY 10003, United States",
+	"DeliveryDate": "/Date(1462143600000)/",
+	"Status": "Open",
+	"ExpirationDate": "/Date(1461366000000)/",
+	"PaymentTerms": "14 days 1.5%, 30 Net",
+	"__metadata": {
+		"uri": "Quotes('QuoteKey 1')",
+		"type": "MyModel.Quote"
+	},
+	"Vendor": {
+		"__deferred": {
+			"uri": "Quotes('QuoteKey 1')/Vendor"
+		}
+	},
+	"CommentsCount": 7,
+	"AttachmentsCount": 2,
+	"VendorCompanyName": "Best Digital Computer Ltd",
+	"VendorContractComplianceKPI12M": 94.13,
+	"VendorOrders12M": 256,
+	"VendorAddress": "701 7th Ave, New York,NY 10017"
+}, {
+	"QuoteKey": "2",
+	"PurchaseRequisitionKey": "2",
+	"VendorKey": "2",
+	"QuoteID": "3700020002",
+	"ProductID": "87234",
+	"ProductDescription": "Intel Core i7-6700K 4.0GHz Quad-Core Processor",
+	"PricePerUnit": 280,
+	"Quantity": 400,
+	"UOM": "PC",
+	"UOMDescription": "piece(s)",
+	"Currency": "USD",
+	"CreatedAt": "/Date(1460535047000)/",
+	"Plant": "New York",
+	"DeliveryAddress": "51 Astor Pl, New York, NY 10003, United States",
+	"DeliveryDate": "/Date(1462143600000)/",
+	"Status": "Open",
+	"ExpirationDate": "/Date(1461366000000)/",
+	"PaymentTerms": "PIA",
+	"__metadata": {
+		"uri": "Quotes('QuoteKey 2')",
+		"type": "MyModel.Quote"
+	},
+	"Vendor": {
+		"__deferred": {
+			"uri": "Quotes('QuoteKey 2')/Vendor"
+		}
+	},
+	"CommentsCount": 3,
+	"AttachmentsCount": 0,
+	"VendorCompanyName": "North Computer Exchange",
+	"VendorOrders12M": 112,
+	"VendorContractComplianceKPI12M": 87.65,
+	"VendorAddress": "77 Penn Plz # 5, New York, NY 10001"
+}, {
+	"QuoteKey": "3",
+	"PurchaseRequisitionKey": "2",
+	"VendorKey": "3",
+	"QuoteID": "3700020003",
+	"ProductID": "87234",
+	"ProductDescription": "Intel Core i7-6700K 4.0GHz Quad-Core Processor",
+	"PricePerUnit": 302.5,
+	"Quantity": 400,
+	"UOM": "PC",
+	"UOMDescription": "piece(s)",
+	"Currency": "USD",
+	"CreatedAt": "/Date(1460479742000)/",
+	"Plant": "New York",
+	"DeliveryAddress": "51 Astor Pl, New York, NY 10003, United States",
+	"DeliveryDate": "/Date(1462143600000)/",
+	"Status": "Rejected",
+	"ExpirationDate": "/Date(1460934000000)/",
+	"PaymentTerms": "14 days 3%, 30/2%, 45 net",
+	"__metadata": {
+		"uri": "Quotes('QuoteKey 3')",
+		"type": "MyModel.Quote"
+	},
+	"Vendor": {
+		"__deferred": {
+			"uri": "Quotes('QuoteKey 3')/Vendor"
+		}
+	},
+	"CommentsCount": 3,
+	"AttachmentsCount": 0,
+	"VendorCompanyName": "Chaos Products Corp",
+	"VendorOrders12M": 16,
+	"VendorContractComplianceKPI12M": 100,
+	"VendorAddress": "1 Greenwich St, New York, NY 10013"
+}]
